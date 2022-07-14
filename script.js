@@ -34,8 +34,16 @@ function playerPlay(choice){
 }
 
 function checkWinner(player, computer){
-    return;
+    switch (player){
+        case "Rock":
+            return computer === "Rock" ? "Tie" : computer === "Paper" ? "Lose" : "Win";
+        case "Paper":
+            return computer === "Rock" ? "Win" : computer === "Paper" ? "Tie" : "Lose";
+        case "Scissors":
+            return computer === "Rock" ? "Lose" : computer === "Paper" ? "Win" : "Tie";
+    }
 }
+
 
 function playRound(){
     let player = playerPlay(prompt("What do you use?"));
