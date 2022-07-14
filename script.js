@@ -51,13 +51,13 @@ function playRound(){
     let result = checkWinner(player, computer);
     switch (result){
         case "Win":
-            console.log("You win! ${player} beats ${computer}");
+            console.log(`You win! ${player} beats ${computer}`);
             return "Win";
         case "Tie":
-            console.log("You tied! ${player} ties with ${computer}");
+            console.log(`You tied! ${player} ties with ${computer}`);
             return "Tie";
         case "Lose":
-            console.log("You lose! ${player} loses to ${computer}");
+            console.log(`You lose! ${player} loses to ${computer}`);
             return "Lose";
     }
 }
