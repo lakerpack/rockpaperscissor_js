@@ -33,8 +33,12 @@ function playerPlay(choice){
 
 }
 
-function play(){
+function checkWinner(player, computer){
+    return;
+}
+
+function playRound(){
     let player = playerPlay(prompt("What do you use?"));
     let computer = computerPlay();
-    if (player !=)
+    checkWinner(player, computer);
 }
