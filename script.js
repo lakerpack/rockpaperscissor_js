@@ -48,5 +48,16 @@ function checkWinner(player, computer){
 function playRound(){
     let player = playerPlay(prompt("What do you use?"));
     let computer = computerPlay();
-    checkWinner(player, computer);
+    let result = checkWinner(player, computer);
+    switch (result){
+        case "Win":
+            console.log("You win! ${player} beats ${computer}");
+            return "Win";
+        case "Tie":
+            console.log("You tied! ${player} ties with ${computer}");
+            return "Tie";
+        case "Lose":
+            console.log("You lose! ${player} loses to ${computer}");
+            return "Lose";
+    }
 }
