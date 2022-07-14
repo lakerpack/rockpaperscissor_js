@@ -1,5 +1,5 @@
 function computerPlay(){
-    roll = Math.floor(Math.random()*3)
+    let roll = Math.floor(Math.random()*3)
     if (roll === 1){
         return "Rock"
     }
@@ -12,4 +12,8 @@ function computerPlay(){
     else{
         console.log("Error in the code.")
     }
+}
+
+function playerPlay(choice){
+
 }
