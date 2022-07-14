@@ -16,16 +16,25 @@ function computerPlay(){
 
 function playerPlay(choice){
     true_choice = choice.toLowerCase();
-    if (true_choice === "rock"){
-        return "Rock";
+    while (true_choice != "rock" || true_choice != "paper" || true_choice != "scissors"){
+        if (true_choice === "rock"){
+            return "Rock";
+        }
+        else if (true_choice === "paper"){
+            return "Paper";
+        }
+        else if (true_choice === "scissors"){
+            return "Scissors";
+        }
+        else{
+            console.log("Please try again.");
+        }
     }
-    else if (true_choice === "paper"){
-        return "Paper";
-    }
-    else if (true_choice === "scissors"){
-        return "Scissors";
-    }
-    else{
-        console.log("Player error.");
-    }
+
+}
+
+function play(){
+    let player = playerPlay(prompt("What do you use?"));
+    let computer = computerPlay();
+    if (player !=)
 }
