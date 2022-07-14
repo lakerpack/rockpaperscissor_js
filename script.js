@@ -16,4 +16,16 @@ function computerPlay(){
 
 function playerPlay(choice){
     true_choice = choice.toLowerCase();
+    if (true_choice === "rock"){
+        return "Rock";
+    }
+    else if (true_choice === "paper"){
+        return "Paper";
+    }
+    else if (true_choice === "scissors"){
+        return "Scissors";
+    }
+    else{
+        console.log("Player error.");
+    }
 }
