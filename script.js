@@ -61,3 +61,15 @@ function playRound(){
             return "Lose";
     }
 }
+
+function game(){
+    let score = 0;
+    for (let i = 0; i < 5; i++){
+        result = playRound();
+        switch (result){
+            case "Win":
+                score += 1;
+        }
+    }
+    console.log(`Congrats! You won ${score} out of 5 rounds!`)
+}
