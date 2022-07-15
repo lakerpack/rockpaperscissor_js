@@ -1,6 +1,5 @@
 function computerPlay(){
     let roll = Math.floor(Math.random()*3) + 1;
-    console.log(roll)
     if (roll === 1){
         return "Rock";
     }
