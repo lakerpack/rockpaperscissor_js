@@ -89,8 +89,14 @@ const scissors = document.querySelector('#scissors'); */
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        const id = button.getAttribute('id')
-        playRound(id);
+        if (wins == 5 || losses == 5){
+            return;
+        }
+        else{
+            const id = button.getAttribute('id')
+            playRound(id);
+        }
+
     });
 });
 
