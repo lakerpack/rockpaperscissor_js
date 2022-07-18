@@ -31,13 +31,13 @@ function playRound(choice){
     let result = checkWinner(choice, computer);
     switch (result){
         case "Win":
-            console.log(`You win! ${player} beats ${computer}`);
+            console.log(`You win! ${choice} beats ${computer}`);
             return "Win";
         case "Tie":
-            console.log(`You tied! ${player} ties with ${computer}`);
+            console.log(`You tied! ${choice} ties with ${computer}`);
             return "Tie";
         case "Lose":
-            console.log(`You lose! ${player} loses to ${computer}`);
+            console.log(`You lose! ${choice} loses to ${computer}`);
             return "Lose";
     }
 }
@@ -66,17 +66,17 @@ buttons.forEach(button => {
 });
 
 const score = document.querySelector("#result");
+let wins = 0;
+let losses = 0;
+let ties = 0;
 
 do{
-    let wins = 0;
-    let losses = 0;
-    let ties = 0;
-
     score.textContent = `Wins: ${wins} Losses: ${losses} Ties: ${ties}`;
 
     if (wins == 5 || losses == 5){
         const restart = document.createElement("button");
         restart.textContent = "Restart the game?";
+        score.appendChild(restart);
         restart.addEventListener('click', () => {
             wins = 0;
             losses = 0;
