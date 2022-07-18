@@ -1,2 +1,2 @@
 # rockpaperscissor_js
-This is a Rock Paper Scissors game done purely in ~~HTMl and~~ Javascript for the sake of TheOdinProject!
+This is a Rock Paper Scissors game created with HTML, CSS, and Javascript for the sake of TheOdinProject!
