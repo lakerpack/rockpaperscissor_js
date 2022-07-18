@@ -69,20 +69,3 @@ const score = document.querySelector("#result");
 let wins = 0;
 let losses = 0;
 let ties = 0;
-
-do{
-    score.textContent = `Wins: ${wins} Losses: ${losses} Ties: ${ties}`;
-
-    if (wins == 5 || losses == 5){
-        const restart = document.createElement("button");
-        restart.textContent = "Restart the game?";
-        score.appendChild(restart);
-        restart.addEventListener('click', () => {
-            wins = 0;
-            losses = 0;
-            ties = 0;
-        });
-    }
-
-} while (wins < 5 || losses < 5);
-
