@@ -32,24 +32,24 @@ function playRound(choice){
     switch (result){
         case "Win":
             console.log(`You win! ${choice} beats ${computer}`);
-            return "Win";
+            updateGame("Win");
         case "Tie":
             console.log(`You tied! ${choice} ties with ${computer}`);
-            return "Tie";
+            updateGame("Tie");
         case "Lose":
             console.log(`You lose! ${choice} loses to ${computer}`);
-            return "Lose";
+            updateGame("Lose");
     }
 }
 
-function updateGame(){
-    let score = 0;
-    for (let i = 0; i < 5; i++){
-        result = playRound();
-        switch (result){
-            case "Win":
-                score += 1;
-        }
+function updateGame(result){
+    switch(result){
+        case "Win":
+            wins += 1;
+        case "Lose":
+            losses += 1;
+        case "Tie":
+            ties += 1;
     }
 }
 
