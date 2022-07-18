@@ -62,10 +62,26 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const id = button.getAttribute('id')
         playRound(id);
+        score.textContent = `Wins: ${wins} Losses: ${losses} Ties: ${ties}`;
     });
 });
 
-const score = document.querySelector("#result");
+
 let wins = 0;
 let losses = 0;
 let ties = 0;
+
+const score = document.querySelector("#result");
+
+
+if (wins == 5 || losses == 5){
+    const restart = document.createElement("button");
+    restart.textContent = "Restart the game?";
+    score.appendChild(restart);
+    restart.addEventListener('click', () => {
+        wins = 0;
+        losses = 0;
+        ties = 0;
+    });
+}
+
