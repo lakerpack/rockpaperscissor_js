@@ -14,25 +14,6 @@ function computerPlay(){
     }
 }
 
-function playerPlay(choice){
-    true_choice = choice.toLowerCase();
-    while (true_choice != "rock" || true_choice != "paper" || true_choice != "scissors"){
-        if (true_choice === "rock"){
-            return "Rock";
-        }
-        else if (true_choice === "paper"){
-            return "Paper";
-        }
-        else if (true_choice === "scissors"){
-            return "Scissors";
-        }
-        else{
-            console.log("Please try again.");
-        }
-    }
-
-}
-
 function checkWinner(player, computer){
     switch (player){
         case "Rock":
@@ -47,7 +28,7 @@ function checkWinner(player, computer){
 
 function playRound(choice){
     let computer = computerPlay();
-    let result = checkWinner(player, computer);
+    let result = checkWinner(choice, computer);
     switch (result){
         case "Win":
             console.log(`You win! ${player} beats ${computer}`);
@@ -61,7 +42,7 @@ function playRound(choice){
     }
 }
 
-function game(){
+function updateGame(){
     let score = 0;
     for (let i = 0; i < 5; i++){
         result = playRound();
@@ -81,13 +62,18 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const id = button.getAttribute('id')
-        switch (id){
-            case "rock":
-                playerPlay(id);
-            case "paper":
-                playerPlay(id);
-            case "scissors":
-                playerPlay(id);
-        }
+        playRound(id);
     });
 });
+
+const score = document.querySelector("#result");
+
+do{
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+
+    score.textContent = `Wins: ${wins} Losses: ${losses} Ties: ${ties}`;
+
+} while (wins < 5 || losses < 5);
+
