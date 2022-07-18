@@ -51,7 +51,6 @@ function updateGame(){
                 score += 1;
         }
     }
-    console.log(`Congrats! You won ${score} out of 5 rounds!`)
 }
 
 /* const rock = document.querySelector('#rock');
@@ -74,6 +73,16 @@ do{
     let ties = 0;
 
     score.textContent = `Wins: ${wins} Losses: ${losses} Ties: ${ties}`;
+
+    if (wins == 5 || losses == 5){
+        const restart = document.createElement("button");
+        restart.textContent = "Restart the game?";
+        restart.addEventListener('click', () => {
+            wins = 0;
+            losses = 0;
+            ties = 0;
+        });
+    }
 
 } while (wins < 5 || losses < 5);
 
