@@ -45,8 +45,7 @@ function checkWinner(player, computer){
 }
 
 
-function playRound(){
-    let player = playerPlay(prompt("What do you use?"));
+function playRound(choice){
     let computer = computerPlay();
     let result = checkWinner(player, computer);
     switch (result){
@@ -73,3 +72,22 @@ function game(){
     }
     console.log(`Congrats! You won ${score} out of 5 rounds!`)
 }
+
+/* const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors'); */
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const id = button.getAttribute('id')
+        switch (id){
+            case "rock":
+                playerPlay(id);
+            case "paper":
+                playerPlay(id);
+            case "scissors":
+                playerPlay(id);
+        }
+    });
+});
